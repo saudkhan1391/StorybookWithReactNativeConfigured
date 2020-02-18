@@ -24,6 +24,7 @@ import OnBoarding2 from './OnBoarding2';
 import OnBoarding3 from './OnBoarding3';
 import AddAddress from './AddAddress';
 import AddItems from './AddItems';
+import PickupAddress from './PickupAddress';
 
 const Stack = createStackNavigator();
 var CurrentScreem = 'Gratitude';
@@ -32,6 +33,14 @@ function Navigator1() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
+      <Stack.Screen
+          name="PickupAddress"
+          component={PickupAddress}
+          options={{
+            gestureDirection: 'horizontal',
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+        />
       <Stack.Screen
           name="AddItems"
           component={AddItems}
