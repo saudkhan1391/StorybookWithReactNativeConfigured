@@ -3,11 +3,14 @@ import {View, Text, StyleSheet, Image} from 'react-native';
 import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 
 import LinearGradient from 'react-native-linear-gradient';
-// import MarkerSvg from '../assets/svgs/icon-marker.svg';
+// import MarkerSvg from "../assets/svgs/Dog.svg";
+import MarkerSvg from '../assets/svgs/icon-marker.svg';
 export default function SetLocation(props) {
   return (
     <View style={styles.container}>
-          {/* <MarkerSvg width={20} height={23} /> */}
+      <View style={styles.logoView}>
+        <MarkerSvg width={70} height={70} />
+      </View>
       <View style={styles.welcomeBackView}>
         <Text style={styles.welcomeBackText}>Hello, nice to meet you</Text>
       </View>
@@ -27,30 +30,33 @@ export default function SetLocation(props) {
         </LinearGradient>
       </View>
       <View style={styles.weonlyuseTextView}>
-        <Text style={{color:"#666666"}}>
+        <Text style={{color: '#666666'}}>
           We are only using your location while you are using this incredible
           app
         </Text>
       </View>
       <View style={styles.setyourlocationView}>
-          <Text style={{color:"#fe5497",fontSize:18}}>Or set your location manually</Text>
+        <Text style={{color: '#fe5497', fontSize: 18}}>
+          Or set your location manually
+        </Text>
       </View>
     </View>
   );
 }
 var styles = StyleSheet.create({
-    setyourlocationView:{
-        marginTop:"10%",
-        justifyContent:"center",
-        // alignItems:"flex-start",
-        width:"80%",
-        alignSelf:"center"
-    },
-    weonlyuseTextView:{
-        marginTop:"5%",
-        width:"80%",
-        alignSelf:"center"
-    },
+  logoView: {marginLeft: '10%', marginTop: '10%', marginBottom: '10%'},
+  setyourlocationView: {
+    marginTop: '10%',
+    justifyContent: 'center',
+    // alignItems:"flex-start",
+    width: '80%',
+    alignSelf: 'center',
+  },
+  weonlyuseTextView: {
+    marginTop: '5%',
+    width: '80%',
+    alignSelf: 'center',
+  },
   donthaveanaccountView: {
     marginTop: '20%',
     width: '95%',
@@ -98,9 +104,9 @@ var styles = StyleSheet.create({
   signButtonView: {
     height: 50,
     // borderWidth: 3,
-    borderColor:"yellow",
-    width:"80%",
-    alignSelf:"center",
+    borderColor: 'yellow',
+    width: '80%',
+    alignSelf: 'center',
     // paddingTop:"5%"
     // justifyContent: 'center',
     // alignItems: 'center',
@@ -147,7 +153,7 @@ var styles = StyleSheet.create({
   },
   signInToContinueView: {
     marginTop: '5%',
-    marginBottom:"10%",
+    marginBottom: '10%',
     // justifyContent: 'center',
     // alignItems: 'center',
     width: '80%',

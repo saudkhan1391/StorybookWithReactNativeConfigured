@@ -1,0 +1,20 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="64px" viewBox="0 0 52 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 63.1 (101010) - https://sketch.com -->
+    <title>1F8CD322-7F82-4418-A8CB-DB2BDF8410DC</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="16.9921875%" y1="0%" x2="83.0078125%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FE5497" offset="0%"></stop>
+            <stop stop-color="#7F2284" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Screen" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="08-Set-Location" transform="translate(-44.000000, -60.000000)" fill="url(#linearGradient-1)">
+            <g id="Icon-Marker" transform="translate(44.000000, 60.000000)">
+                <path d="M26,0 C11.6409091,0 0,11.6771015 0,26.0808358 C0,43.2325418 16.9047273,51.4432631 19.0225455,53.354277 C21.1852727,55.3055977 22.9721818,59.6800652 23.6930909,62.1601156 C24.0429091,63.364576 25.0261818,63.9739192 26,64 C26.9761818,63.9715482 27.9570909,63.362205 28.3069091,62.1601156 C29.0278182,59.6800652 30.8147273,55.3079687 32.9774545,53.354277 C35.0952727,51.4432631 52,43.2325418 52,26.0808358 C52,11.6771015 40.3590909,0 26,0 Z M26,33.193791 C22.0834545,33.193791 18.9090909,30.009558 18.9090909,26.0808358 C18.9090909,22.1521135 22.0834545,18.9678806 26,18.9678806 C29.9165455,18.9678806 33.0909091,22.1521135 33.0909091,26.0808358 C33.0909091,30.009558 29.9165455,33.193791 26,33.193791 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>

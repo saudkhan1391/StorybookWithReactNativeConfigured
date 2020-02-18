@@ -5,9 +5,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 import {SvgXml} from 'react-native-svg';
-import EmotionsSVG from '../assets/emotionsSVG.svg';
-import Bower from '../assets/Bower.svg';
-import Dog from '../assets/Dog.svg';
+import EmotionsSVG from '../assets/svgs/emotionsSVG.svg';
+import Bower from '../assets/svgs/Bower.svg';
+import Dog from '../assets/svgs/Dog.svg';
 import {Provider} from './store/Store';
 import Screen2 from './Screen2';
 import ChildComponent from './ConsumerText';
