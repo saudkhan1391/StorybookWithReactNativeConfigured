@@ -13,6 +13,7 @@ import Screen3 from './Screen3';
 import CheckPreviousScreen from './CheckPreviousScreen';
 import { Consumer } from './store/Store';
 import ChildComponent from './ConsumerText';
+import WelcomeBack from './WelcomeBack';
 
 const Stack = createStackNavigator();
 var CurrentScreem="Gratitude"
@@ -21,6 +22,15 @@ function Navigator1() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none" >
+      <Stack.Screen
+          name="WelcomeBack"
+          // component={CurrentScreem}
+          component={WelcomeBack}
+          options={{
+            gestureDirection: 'horizontal',
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+        />
       <Stack.Screen
           name="CheckPreviousScreen"
           // component={CurrentScreem}
