@@ -25,6 +25,11 @@ import OnBoarding3 from './OnBoarding3';
 import AddAddress from './AddAddress';
 import AddItems from './AddItems';
 import PickupAddress from './PickupAddress';
+import DeliveryAddress from './DeliveryAddress';
+import HomeScreen from './HomeScreen';
+import Notifications from './Notifications';
+import Orders from './Orders';
+import Success from '../Success';
 
 const Stack = createStackNavigator();
 var CurrentScreem = 'Gratitude';
@@ -33,7 +38,48 @@ function Navigator1() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
-      <Stack.Screen
+        <Stack.Screen
+          name="Success"
+          component={Success}
+          options={{
+            gestureDirection: 'horizontal',
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+        />
+        <Stack.Screen
+          name="Orders"
+          component={Orders}
+          options={{
+            gestureDirection: 'horizontal',
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+        />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{
+            gestureDirection: 'horizontal',
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+        />
+        <Stack.Screen
+          name="Notifications"
+          component={Notifications}
+          options={{
+            gestureDirection: 'horizontal',
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+        />
+
+        <Stack.Screen
+          name="DeliveryAddress"
+          component={DeliveryAddress}
+          options={{
+            gestureDirection: 'horizontal',
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+        />
+        <Stack.Screen
           name="PickupAddress"
           component={PickupAddress}
           options={{
@@ -41,7 +87,7 @@ function Navigator1() {
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           }}
         />
-      <Stack.Screen
+        <Stack.Screen
           name="AddItems"
           component={AddItems}
           options={{
@@ -49,7 +95,7 @@ function Navigator1() {
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           }}
         />
-      <Stack.Screen
+        <Stack.Screen
           name="AddAddress"
           component={AddAddress}
           options={{
@@ -57,7 +103,7 @@ function Navigator1() {
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           }}
         />
-      <Stack.Screen
+        <Stack.Screen
           name="WelcomeUser"
           component={WelcomeUser}
           options={{
@@ -122,7 +168,7 @@ function Navigator1() {
             cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           }}
         />
-        
+
         <Stack.Screen
           name="WelcomeBack"
           component={WelcomeBack}

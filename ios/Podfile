@@ -52,6 +52,8 @@ target 'GratitudeSelfcare' do
 
   pod 'RNScreens', :path => '../node_modules/react-native-screens'
 
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
   target 'GratitudeSelfcareTests' do
     inherit! :search_paths
     # Pods for testing
