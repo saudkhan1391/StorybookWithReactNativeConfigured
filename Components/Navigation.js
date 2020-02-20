@@ -30,14 +30,49 @@ import HomeScreen from './HomeScreen';
 import Notifications from './Notifications';
 import Orders from './Orders';
 import Success from '../Success';
-
+import {createDrawerNavigator} from '@react-navigation/drawer';
+const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
-var CurrentScreem = 'Gratitude';
+// var CurrentScreem = 'Gratitude';
+function DrawerNav() {
+  return (
+    // <NavigationContainer independent={true}>
+    <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Screen name="AddAddress" component={AddAddress} />
+      <Drawer.Screen name="AddItems" component={AddItems} />
+      <Drawer.Screen name="ForgotPassword" component={ForgotPassword} />
+      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+      <Drawer.Screen name="Logos" component={Logos} />
+      <Drawer.Screen name="Notifications" component={Notifications} />
+      <Drawer.Screen name="OnBoarding" component={OnBoarding} />
+      <Drawer.Screen name="OnBoarding2" component={OnBoarding2} />
+      <Drawer.Screen name="OnBoarding3" component={OnBoarding3} />
+      <Drawer.Screen name="Orders" component={Orders} />
+      <Drawer.Screen name="PickupAddress" component={PickupAddress} />
+      <Drawer.Screen name="SetLocation" component={SetLocation} />
+      <Drawer.Screen name="SplahScreen" component={SplahScreen} />
+      <Drawer.Screen name="WelcomeBack" component={WelcomeBack} />
+      <Drawer.Screen name="WelcomeUser" component={WelcomeUser} />
+      <Drawer.Screen name="Gratitude" component={Gratitude} />
+      <Drawer.Screen name="Screen2" component={Screen2} />
+      <Drawer.Screen name="Screen3" component={Screen3} />
+    </Drawer.Navigator>
+    // </NavigationContainer>
+  );
+}
 function Navigator1() {
   // cosnt [currentScreem,setCurrentScreen]=React.useState("Gratitude");
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
+        <Stack.Screen
+          name="DrawerNav"
+          component={DrawerNav}
+          options={{
+            gestureDirection: 'horizontal',
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}
+        />
         <Stack.Screen
           name="Success"
           component={Success}

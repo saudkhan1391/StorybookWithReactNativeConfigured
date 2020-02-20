@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
-import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
+import {
+  TextInput,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native-gesture-handler';
 
 import LinearGradient from 'react-native-linear-gradient';
 // import MarkerSvg from "../assets/svgs/Dog.svg";
@@ -8,39 +12,41 @@ import MarkerSvg from '../assets/svgs/icon-marker.svg';
 export default function SetLocation(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.logoView}>
-        <MarkerSvg width={70} height={70} />
-      </View>
-      <View style={styles.welcomeBackView}>
-        <Text style={styles.welcomeBackText}>Hello, nice to meet you</Text>
-      </View>
-      <View style={styles.signInToContinueView}>
-        <Text style={styles.signIntoContinueText}>
-          Set your location to start finding services around you
-        </Text>
-      </View>
+      <ScrollView>
+        <View style={styles.logoView}>
+          <MarkerSvg width={70} height={70} />
+        </View>
+        <View style={styles.welcomeBackView}>
+          <Text style={styles.welcomeBackText}>Hello, nice to meet you</Text>
+        </View>
+        <View style={styles.signInToContinueView}>
+          <Text style={styles.signIntoContinueText}>
+            Set your location to start finding services around you
+          </Text>
+        </View>
 
-      <View style={styles.signButtonView}>
-        <LinearGradient
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 0}}
-          colors={['#fe5497', '#7f2284']}
-          style={styles.LinearGradient}>
-          <Text style={styles.signinText}>Use Current Services</Text>
-        </LinearGradient>
+        <View style={styles.signButtonView}>
+          <LinearGradient
+            start={{x: 0, y: 0}}
+            end={{x: 1, y: 0}}
+            colors={['#fe5497', '#7f2284']}
+            style={styles.LinearGradient}>
+            <Text style={styles.signinText}>Use Current Services</Text>
+          </LinearGradient>
+        </View>
+        <View style={styles.weonlyuseTextView}>
+          <Text style={{color: '#666666'}}>
+            We are only using your location while you are using this incredible
+            app
+          </Text>
+        </View>
+        <View style={styles.setyourlocationView}>
+          <Text style={{color: '#fe5497', fontSize: 18}}>
+            Or set your location manually
+          </Text>
+        </View>
+    </ScrollView>
       </View>
-      <View style={styles.weonlyuseTextView}>
-        <Text style={{color: '#666666'}}>
-          We are only using your location while you are using this incredible
-          app
-        </Text>
-      </View>
-      <View style={styles.setyourlocationView}>
-        <Text style={{color: '#fe5497', fontSize: 18}}>
-          Or set your location manually
-        </Text>
-      </View>
-    </View>
   );
 }
 var styles = StyleSheet.create({
