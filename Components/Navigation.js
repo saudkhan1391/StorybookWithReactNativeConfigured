@@ -31,17 +31,20 @@ import Notifications from './Notifications';
 import Orders from './Orders';
 import Success from '../Success';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import Account from './Account';
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 // var CurrentScreem = 'Gratitude';
 function DrawerNav() {
   return (
     // <NavigationContainer independent={true}>
-    <Drawer.Navigator initialRouteName="Home">
+    <Drawer.Navigator initialRouteName="Account">
+      <Drawer.Screen name="Account" component={Account} />
+      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+      <Drawer.Screen name="Success" component={Success} />
       <Drawer.Screen name="AddAddress" component={AddAddress} />
       <Drawer.Screen name="AddItems" component={AddItems} />
       <Drawer.Screen name="ForgotPassword" component={ForgotPassword} />
-      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
       <Drawer.Screen name="Logos" component={Logos} />
       <Drawer.Screen name="Notifications" component={Notifications} />
       <Drawer.Screen name="OnBoarding" component={OnBoarding} />
@@ -49,6 +52,7 @@ function DrawerNav() {
       <Drawer.Screen name="OnBoarding3" component={OnBoarding3} />
       <Drawer.Screen name="Orders" component={Orders} />
       <Drawer.Screen name="PickupAddress" component={PickupAddress} />
+      <Drawer.Screen name="DeliveryAddress" component={DeliveryAddress} />
       <Drawer.Screen name="SetLocation" component={SetLocation} />
       <Drawer.Screen name="SplahScreen" component={SplahScreen} />
       <Drawer.Screen name="WelcomeBack" component={WelcomeBack} />

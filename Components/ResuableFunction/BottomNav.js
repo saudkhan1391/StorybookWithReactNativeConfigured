@@ -16,7 +16,7 @@ export default function BottomNav(props) {
     // setSelectedButton(props.selectedButton);
   }
   return (
-    <View style={styles.BottomAreaContainer}>
+    <View style={props.style}>
       <View style={styles.BottomNavigationMenu}>
         <TouchableOpacity style={styles.butoninNav}>
           <View style={styles.buttonNavIcon}>
