@@ -11,7 +11,8 @@ import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import Octicons from 'react-native-vector-icons/Octicons';
-export default function HomeScreen() {
+import BottomNav from './ResuableFunction/BottomNav';
+export default function HomeScreen(props) {
   return (
     <View style={styles.container}>
       <View style={styles.topHeader}>
@@ -26,18 +27,20 @@ export default function HomeScreen() {
       </View>
       <View style={styles.fourBoxContainer}>
         <View style={styles.twoBoxContainer}>
-          <View style={styles.box}>
+          <TouchableOpacity  onPress={()=>{props.navigation.navigate("AddItems")}} style={styles.box}>
             <View style={styles.insideBoxContainer}>
               <View style={styles.boxIconContainer}>
                 <WachingMachineSvg width={'100%'} height={'100%'} />
               </View>
-              <View>
+              <View 
+             
+              >
                 <Text style={styles.washText}>Wash & Fold</Text>
                 <Text style={styles.belowWashText}>2 Days</Text>
               </View>
             </View>
-          </View>
-          <View style={styles.box}>
+          </TouchableOpacity>
+          <TouchableOpacity  onPress={()=>{props.navigation.navigate("AddItems")}} style={styles.box}>
             <View style={styles.insideBoxContainer}>
               <View style={styles.boxIconContainer}>
                 <ClothesSvg width={'100%'} height={'100%'} />
@@ -47,10 +50,10 @@ export default function HomeScreen() {
                 <Text style={styles.belowWashText}>2 Days</Text>
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={[styles.twoBoxContainer, {paddingTop: '2%'}]}>
-          <View style={styles.box}>
+        <TouchableOpacity  onPress={()=>{props.navigation.navigate("AddItems")}} style={styles.box}>
             <View style={styles.insideBoxContainer}>
               <View style={styles.boxIconContainer}>
                 <ShirtSvg width={'100%'} height={'100%'} />
@@ -60,8 +63,8 @@ export default function HomeScreen() {
                 <Text style={styles.belowWashText}>2 Days</Text>
               </View>
             </View>
-          </View>
-          <View style={styles.box}>
+          </TouchableOpacity>
+          <TouchableOpacity  onPress={()=>{props.navigation.navigate("AddItems")}} style={styles.box}>
             <View style={styles.insideBoxContainer}>
               <View style={styles.boxIconContainer}>
                 <IronSvg width={'100%'} height={'100%'} />
@@ -71,10 +74,11 @@ export default function HomeScreen() {
                 <Text style={styles.belowWashText}>2 Days</Text>
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.BottomAreaContainer}>
+        <View style={{height:"67%",borderWidth:0,borderColor:"red"}}>
         <ScrollView horizontal={true}>
           <View style={styles.insideScrollviewBox}>
             <View style={styles.roundView}>
@@ -111,7 +115,11 @@ export default function HomeScreen() {
             </View>
           </View>
         </ScrollView>
-        <View style={styles.BottomNavigationMenu}>
+        </View>
+        {/* <View style={{height:50}}> */}
+        <BottomNav style={styles.BottomNavigationMenu} navigation={props.navigation} selectedButton={"HomeScreen"}/>
+        {/* </View> */}
+        {/* <View style={styles.BottomNavigationMenu}>
           <TouchableOpacity style={styles.butoninNav}>
             <View style={styles.buttonNavIcon}>
               <FontAwesome5Icon name="home" size={24} color="#fe5497"/>
@@ -144,7 +152,7 @@ export default function HomeScreen() {
               <Text>Account</Text>
             </View>
           </TouchableOpacity>
-        </View>
+        </View> */}
       </View>
     </View>
   );
@@ -165,14 +173,19 @@ const styles = StyleSheet.create({
     // borderWidth: 2,
   },
   BottomNavigationMenu: {
-    borderWidth: 1,
-    borderColor: '#efeff4',
-    // height: 60,
-    height: '35%',
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent:"space-around",
-    alignItems:"center"
+    // borderWidth: 3,
+    borderColor: '#289',
+    // borderColor: '#efeff4',
+    // backgroundColor:"white",
+    height: "33%",
+    // height: 50,
+    // height: '100%',
+    // width: '100%',
+    // flexDirection: 'row',
+    // justifyContent:"flex-end",
+    // position:"absolute"
+    // justifyContent:"space-around",
+    // alignItems:"center",
   },
   roundView: {
     backgroundColor: '#fe5398',

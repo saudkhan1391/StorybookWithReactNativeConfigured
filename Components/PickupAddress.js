@@ -43,6 +43,9 @@ export default function PickupAddress(props) {
           <IconFA5 name="circle" size={22} color="lightgrey" />
         </View>
         <View style={styles.signButtonView}>
+          <TouchableOpacity
+          onPress={()=>{props.navigation.navigate("DeliveryAddress")}}
+          style={{}}>
           <LinearGradient
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -50,6 +53,7 @@ export default function PickupAddress(props) {
             style={styles.LinearGradient}>
             <Text style={styles.signinText}>Next</Text>
           </LinearGradient>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -196,8 +200,8 @@ var styles = StyleSheet.create({
     alignSelf: 'center',
     marginVertical: 15,
     width: '90%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center',
   },
   remebermeText: {
     color: '#666666',

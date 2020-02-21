@@ -17,9 +17,9 @@ export default function AddAddress(props) {
       <ScrollView
         style={{}}
         contentContainerStyle={{
+          // height: 650,
           height: 700,
-        //   height: 650,
-        //   borderWidth: 2,
+          // borderWidth: 2,
           borderColor: 'red',
         }}>
         <View style={styles.container}>
@@ -73,7 +73,12 @@ export default function AddAddress(props) {
               />
             </View>
           </View>
+          {/* <View style={{height:"5%"}} /> */}
+        </View>
           <View style={styles.signButtonView}>
+            <TouchableOpacity onPress={()=>{}}
+            style={{}}
+            >
             <LinearGradient
               start={{x: 0, y: 0}}
               end={{x: 1, y: 0}}
@@ -81,8 +86,8 @@ export default function AddAddress(props) {
               style={styles.LinearGradient}>
               <Text style={styles.signinText}>Save</Text>
             </LinearGradient>
+            </TouchableOpacity>
           </View>
-        </View>
       </ScrollView>
     </View>
   );
@@ -137,9 +142,12 @@ var styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 8,
+    // borderRadius: 8,
+    // borderWidth:2,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
     // marginTop:"5%"
-    marginTop: 40,
+    // marginTop: 40,
   },
   singWithFbView: {
     justifyContent: 'center',
@@ -158,9 +166,10 @@ var styles = StyleSheet.create({
   signButtonView: {
     height: 50,
     // borderWidth: 1,
-    width: '100%',
+    width: '90%',
+    alignSelf:"center",
     justifyContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
   },
   remebermeText: {
     color: '#666666',

@@ -14,7 +14,7 @@ import Octicons from 'react-native-vector-icons/Octicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import BottomNav from './ResuableFunction/BottomNav';
 import LinearGradient from 'react-native-linear-gradient';
-export default function Notifications() {
+export default function Notifications(props) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -204,7 +204,7 @@ export default function Notifications() {
         </ScrollView>
       </View>
       {/* <View style={{height: '100%'}}> */}
-      <BottomNav selectedButton={'notifications'} />
+      <BottomNav selectedButton={'notifications'} style={{height:"10%"}} navigation={props.navigation} />
       {/* </View> */}
     </View>
   );
@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
     borderColor: '#efeff4',
   },
   ScrollViewContainer: {
-    // borderWidth: 1,
+    borderWidth: 1,
     height: '80%',
     borderColor: 'green',
   },

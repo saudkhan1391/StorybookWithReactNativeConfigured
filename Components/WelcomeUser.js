@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
-import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
+import {TextInput, TouchableOpacity, ScrollView} from 'react-native-gesture-handler';
 import EntypIcon from 'react-native-vector-icons/Entypo';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
 export default function WelcomeUser(props) {
   return (
+    <ScrollView>
     <View style={styles.container}>
       <View style={styles.welcomeBackView}>
         <Text style={styles.welcomeBackText}>Welcome User</Text>
@@ -36,13 +37,18 @@ export default function WelcomeUser(props) {
           <Text style={styles.signinText}>Sign Up</Text>
         </LinearGradient>
       </View>
-      <TouchableOpacity style={styles.donthaveanaccountView}>
+      <TouchableOpacity
+        style={styles.donthaveanaccountView}
+        onPress={() => {
+          props.navigation.navigate('WelcomeBack');
+        }}>
         <Text style={{textAlign: 'center', color: '#666666', fontSize: 17}}>
           Have an account?{' '}
           <Text style={{color: '#fe5398', fontWeight: 'bold'}}> Sign In</Text>{' '}
         </Text>
       </TouchableOpacity>
     </View>
+    </ScrollView>
   );
 }
 var styles = StyleSheet.create({

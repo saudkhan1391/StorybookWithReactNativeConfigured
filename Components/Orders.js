@@ -11,7 +11,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import BottomNav from './ResuableFunction/BottomNav';
-export default function Orders() {
+export default function Orders(props) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -218,7 +218,7 @@ export default function Orders() {
         </ScrollView>
       </View>
       {/* <View style={{height: '100%'}}> */}
-      <BottomNav selectedButton={'orders'} />
+      <BottomNav selectedButton={'orders'} navigation={props.navigation} style={{height:"10%"}} />
       {/* </View> */}
     </View>
   );

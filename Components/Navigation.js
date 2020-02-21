@@ -29,23 +29,28 @@ import DeliveryAddress from './DeliveryAddress';
 import HomeScreen from './HomeScreen';
 import Notifications from './Notifications';
 import Orders from './Orders';
-import Success from '../Success';
+import Success from './Success';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Account from './Account';
+import OrderDetails from './OrderDetails';
+import OrderSummary from './OrderSummary';
+import Schedule from './Schedule';
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 // var CurrentScreem = 'Gratitude';
 function DrawerNav() {
   return (
     // <NavigationContainer independent={true}>
-    <Drawer.Navigator initialRouteName="Account">
-      <Drawer.Screen name="Account" component={Account} />
+    <Drawer.Navigator initialRouteName="OnBoarding">
+      <Drawer.Screen name="Schedule" component={Schedule} />
+      <Drawer.Screen name="OrderSummary" component={OrderSummary} />
       <Drawer.Screen name="HomeScreen" component={HomeScreen} />
+      <Drawer.Screen name="OrderDetails" component={OrderDetails} />
+      <Drawer.Screen name="Account" component={Account} />
       <Drawer.Screen name="Success" component={Success} />
       <Drawer.Screen name="AddAddress" component={AddAddress} />
       <Drawer.Screen name="AddItems" component={AddItems} />
       <Drawer.Screen name="ForgotPassword" component={ForgotPassword} />
-      <Drawer.Screen name="Logos" component={Logos} />
       <Drawer.Screen name="Notifications" component={Notifications} />
       <Drawer.Screen name="OnBoarding" component={OnBoarding} />
       <Drawer.Screen name="OnBoarding2" component={OnBoarding2} />
@@ -57,9 +62,10 @@ function DrawerNav() {
       <Drawer.Screen name="SplahScreen" component={SplahScreen} />
       <Drawer.Screen name="WelcomeBack" component={WelcomeBack} />
       <Drawer.Screen name="WelcomeUser" component={WelcomeUser} />
-      <Drawer.Screen name="Gratitude" component={Gratitude} />
-      <Drawer.Screen name="Screen2" component={Screen2} />
-      <Drawer.Screen name="Screen3" component={Screen3} />
+      {/* <Drawer.Screen name="Gratitude" component={Gratitude} /> */}
+      {/* <Drawer.Screen name="Screen2" component={Screen2} /> */}
+      {/* <Drawer.Screen name="Screen3" component={Screen3} /> */}
+      {/* <Drawer.Screen name="Logos" component={Logos} /> */}
     </Drawer.Navigator>
     // </NavigationContainer>
   );

@@ -1,51 +1,64 @@
-import React, {useState} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
-import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import {
+  TextInput,
+  TouchableOpacity,
+  TouchableHighlight,
+} from 'react-native-gesture-handler';
 import EntypIcon from 'react-native-vector-icons/Entypo';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import LinearGradient from 'react-native-linear-gradient';
 export default function WelcomeBack(props) {
   const [typedMessage, setTypedMessage] = useState('');
   return (
-    <View style={styles.container}>
-      <View style={styles.welcomeBackView}>
-        <Text style={styles.welcomeBackText}>Welcome Back</Text>
-      </View>
-      <View style={styles.signInToContinueView}>
-        <Text style={styles.signIntoContinueText}>Sign in to continue</Text>
-      </View>
-      <View style={styles.userinputsContainer}>
-        <View style={styles.usernameView}>
-          <TextInput style={{paddingHorizontal: 4}} value="John Doe" />
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.welcomeBackView}>
+          <Text style={styles.welcomeBackText}>Welcome Back</Text>
         </View>
-        <View style={styles.usernameView}>
-          <TextInput style={{paddingHorizontal: 4}} placeholder="Password" />
+        <View style={styles.signInToContinueView}>
+          <Text style={styles.signIntoContinueText}>Sign in to continue</Text>
         </View>
-      </View>
-      <View style={styles.remembermeView}>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <AntIcon
-            name="checkcircle"
-            color="#fe5497"
-            style={{marginRight: 5}}
-          />
-          <Text style={styles.remebermeText}>Remember me</Text>
+        <View style={styles.userinputsContainer}>
+          <View style={styles.usernameView}>
+            <TextInput style={{ paddingHorizontal: 4 }} value="John Doe" />
+          </View>
+          <View style={styles.usernameView}>
+            <TextInput style={{ paddingHorizontal: 4 }} placeholder="Password" />
+          </View>
         </View>
-        <View style={{borderWidth: 0}}>
-          <Text style={styles.forgotPassText}>Forgot password ?</Text>
+        <View style={styles.remembermeView}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <AntIcon
+              name="checkcircle"
+              color="#fe5497"
+              style={{ marginRight: 5 }}
+            />
+            <Text style={styles.remebermeText}>Remember me</Text>
+          </View>
+          <TouchableOpacity  onPress={()=>{
+          props.navigation.navigate("ForgotPassword")
+        }} style={{ borderWidth: 0 }}>
+            <Text style={styles.forgotPassText}>Forgot password ?</Text>
+          </TouchableOpacity>
         </View>
-      </View>
-      <View style={styles.signButtonView}>
-        <LinearGradient
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 0}}
-          colors={['#fe5497', '#7f2284']}
-          style={styles.LinearGradient}>
-          <Text style={styles.signinText}>Sign In</Text>
-        </LinearGradient>
-      </View>
-      <TouchableOpacity style={styles.singWithFbView}>
-        {/* <View
+        {/* <View style={styles.signButtonView}> */}
+        <TouchableOpacity
+        onPress={()=>{
+          props.navigation.navigate("SetLocation")
+        }}
+          style={styles.signInButton}>
+          <LinearGradient
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            colors={['#fe5497', '#7f2284']}
+            style={styles.LinearGradient}>
+            <Text style={styles.signinText}>Sign In</Text>
+          </LinearGradient>
+        </TouchableOpacity>
+        {/* </View> */}
+        <TouchableOpacity style={styles.singWithFbView}>
+          {/* <View
           style={{
             height: '70%',
             alignItems: 'center',
@@ -53,22 +66,33 @@ export default function WelcomeBack(props) {
             flexDirection: 'row',
             borderWidth:2
           }}> */}
-        <View style={styles.iconView}>
-          <EntypIcon name="facebook" color="#fe5398" size={18} />
-        </View>
-        <Text style={styles.signWithFBtext}>Sign In with Facebook</Text>
-        {/* </View> */}
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.donthaveanaccountView}>
-        <Text style={{textAlign: 'center', color: '#666666', fontSize: 17}}>
-          Dont have an account?{' '}
-          <Text style={{color: '#fe5398', fontWeight: 'bold'}}> Sign up</Text>{' '}
-        </Text>
-      </TouchableOpacity>
-    </View>
+          <View style={styles.iconView}>
+            <EntypIcon name="facebook" color="#fe5398" size={18} />
+          </View>
+          <Text style={styles.signWithFBtext}>Sign In with Facebook</Text>
+          {/* </View> */}
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.donthaveanaccountView}
+          onPress={() => {
+            props.navigation.navigate('WelcomeUser');
+          }}>
+          <Text style={{ textAlign: 'center', color: '#666666', fontSize: 17 }}>
+            Dont have an account?{' '}
+            <Text style={{ color: '#fe5398', fontWeight: 'bold' }}> Sign up</Text>{' '}
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 }
 var styles = StyleSheet.create({
+  signInButton: {
+    height: 50,
+    width: '100%',
+    alignItems: 'center',
+    // borderWidth: 2,
+  },
   donthaveanaccountView: {
     marginTop: '20%',
     width: '95%',
@@ -97,7 +121,7 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 8,
     // marginTop:"5%"
-    marginTop: 40,
+    // marginTop: 40,
   },
   singWithFbView: {
     justifyContent: 'center',
@@ -110,14 +134,14 @@ var styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 8,
     // marginTop: '10%',
-    marginTop: 30,
+    marginTop: 15,
     flexDirection: 'row',
   },
   signButtonView: {
     height: 50,
     // borderWidth: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    // justifyContent: 'center',
+    // alignItems: 'center',
   },
   remebermeText: {
     color: '#666666',
@@ -129,11 +153,12 @@ var styles = StyleSheet.create({
     justifyContent: 'space-between',
     // paddingHorizontal: '3%',
     flexDirection: 'row',
-    marginTop: '5%',
+    // marginTop: '5%',
     width: '90%',
     alignSelf: 'center',
     // borderWidth:1,
     alignItems: 'center',
+    height: "10%"
   },
   userinputsContainer: {
     marginTop: '8%',

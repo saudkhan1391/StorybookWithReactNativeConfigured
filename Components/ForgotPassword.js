@@ -23,7 +23,12 @@ export default function ForgotPassword(props) {
           <TextInput style={{paddingHorizontal: 4}} value=" Email" />
         </View>
       </View>
-      <View style={styles.signButtonView}>
+      <View  style={{height:"5%"}} />
+      <TouchableOpacity 
+       onPress={()=>{
+        props.navigation.navigate("WelcomeUser")
+      }}
+      style={styles.signButtonView}>
         <LinearGradient
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
@@ -31,7 +36,7 @@ export default function ForgotPassword(props) {
           style={styles.LinearGradient}>
           <Text style={styles.signinText}>Sign Up</Text>
         </LinearGradient>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -64,7 +69,7 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 8,
     // marginTop:"5%"
-    marginTop: 40,
+    // marginTop: 40,
   },
   singWithFbView: {
     justifyContent: 'center',
@@ -83,7 +88,7 @@ var styles = StyleSheet.create({
   signButtonView: {
     height: 50,
     // borderWidth: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
   },
   remebermeText: {

@@ -19,7 +19,9 @@ export default function DeliveryAddress(props) {
         <View style={styles.header}>
           <EntypIcon name={'arrow-long-left'} size={24} color="#8a8a8f" />
           <Text style={styles.headerText}>Delivery Address</Text>
+          <TouchableOpacity onPress={()=>{props.navigation.navigate("AddAddress")}}>
           <Icon name="ios-add" size={31} color="#8a8a8f" />
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.addressModal}>

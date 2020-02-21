@@ -186,7 +186,11 @@ export default function AddItems(props) {
           </ScrollView>
         </View>
       </View>
-      <View style={styles.signButtonView}>
+      <TouchableOpacity
+      onPress={()=>{
+        props.navigation.navigate("Schedule")
+      }}
+      style={styles.signButtonView}>
         <LinearGradient
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
@@ -198,7 +202,7 @@ export default function AddItems(props) {
 
           <Text style={styles.signinText}>Rs 5000 ></Text>
         </LinearGradient>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }

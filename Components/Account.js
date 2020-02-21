@@ -88,7 +88,7 @@ export default function Account(props) {
       </View>
       {/* <View style={styles.botomNavView}> */}
       {/* <BottomNav style={{borderWidth:3,height:"100%"}} /> */}
-      <BottomNav style={{borderWidth: 0}} selectedButton={"person"} />
+      <BottomNav style={{borderWidth: 0,height:"10%"}} selectedButton={"person"} navigation={props.navigation} />
       {/* </View> */}
     </LinearGradient>
   );

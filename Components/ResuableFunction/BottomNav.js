@@ -18,19 +18,23 @@ export default function BottomNav(props) {
   return (
     <View style={props.style}>
       <View style={styles.BottomNavigationMenu}>
-        <TouchableOpacity style={styles.butoninNav}>
+        <TouchableOpacity
+         onPress={()=>{props.navigation.navigate("HomeScreen")}}
+        style={styles.butoninNav}>
           <View style={styles.buttonNavIcon}>
             <FontAwesome5Icon
               name="home"
               size={24}
-              color={selectedButton == 'home' ? '#fe5497' : '#c8c7cc'}
+              color={selectedButton == 'HomeScreen' ? '#fe5497' : '#c8c7cc'}
             />
           </View>
           <View>
             <Text>Home</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.butoninNav}>
+        <TouchableOpacity
+        onPress={()=>{props.navigation.navigate("Orders")}}
+        style={styles.butoninNav}>
           <View style={styles.buttonNavIcon}>
             {/* <Orders
               width={'100%'}
@@ -47,7 +51,9 @@ export default function BottomNav(props) {
             <Text>Orders</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.butoninNav}>
+        <TouchableOpacity 
+         onPress={()=>{props.navigation.navigate("Notifications")}}
+        style={styles.butoninNav}>
           <View style={styles.buttonNavIcon}>
             <Icon
               name="ios-notifications"
@@ -59,7 +65,9 @@ export default function BottomNav(props) {
             <Text style={{}}>Notifications</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.butoninNav}>
+        <TouchableOpacity
+         onPress={()=>{props.navigation.navigate("Account")}}
+        style={styles.butoninNav}>
           <View style={styles.buttonNavIcon}>
             <Octicons
               name="person"
@@ -93,8 +101,9 @@ const styles = StyleSheet.create({
   BottomNavigationMenu: {
     borderWidth: 1,
     borderColor: '#efeff4',
+    // borderColor: '#efeff4',
     // height: 60,
-    height: '32%',
+    // height: '32%',
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-around',

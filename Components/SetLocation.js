@@ -25,7 +25,11 @@ export default function SetLocation(props) {
           </Text>
         </View>
 
-        <View style={styles.signButtonView}>
+        <TouchableOpacity 
+        onPress={()=>{
+          props.navigation.navigate("HomeScreen")
+        }}
+        style={styles.signButtonView}>
           <LinearGradient
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -33,7 +37,7 @@ export default function SetLocation(props) {
             style={styles.LinearGradient}>
             <Text style={styles.signinText}>Use Current Services</Text>
           </LinearGradient>
-        </View>
+        </TouchableOpacity>
         <View style={styles.weonlyuseTextView}>
           <Text style={{color: '#666666'}}>
             We are only using your location while you are using this incredible

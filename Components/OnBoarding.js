@@ -5,7 +5,7 @@ import Bubbles1 from '../assets/svgs/Bubbles_1.svg';
 import Bubbles2 from '../assets/svgs/Bubbles_2.svg';
 import Backgroundimage from '../assets/background.png';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-export default function OnBoarding() {
+export default function OnBoarding(props) {
   return (
     <ImageBackground source={Backgroundimage} style={styles.container}>
       <View style={styles.logoContainer}>
@@ -22,7 +22,11 @@ export default function OnBoarding() {
         <View style={styles.OtherDot} />
       </View>
       <View style={styles.bottomButtonsContainer}>
-        <TouchableOpacity style={styles.signButtonView}>
+        <TouchableOpacity 
+        onPress={()=>{
+          props.navigation.navigate("WelcomeUser");
+        }}
+        style={styles.signButtonView}>
           <LinearGradient
             start={{x: 0, y: 0}}
             end={{x: 1, y: 0}}
@@ -31,7 +35,11 @@ export default function OnBoarding() {
             <Text style={styles.signinText}>Sign Up</Text>
           </LinearGradient>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.signInButtonView}>
+        <TouchableOpacity
+         onPress={()=>{
+          props.navigation.navigate("WelcomeBack");
+        }}
+        style={styles.signInButtonView}>
           <Text style={styles.signinText}>Sign In</Text>
         </TouchableOpacity>
       </View>
