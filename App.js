@@ -1,6 +1,8 @@
-import Navigator1 from './Components/Navigation';
-
-export default Navigator1;
+// import Navigator1 from './Components/Navigation';
+import StorybookUIRoot from './storybook';
+// export default Navigator1;
+// export default "../storybook";
+export default StorybookUIRoot;
 {
   /* <Provider
           value={{
@@ -10,3 +12,4 @@ export default Navigator1;
           {/* <ChildComponent /> *
         </Provider> */
 }
+
