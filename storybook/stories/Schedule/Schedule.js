@@ -7,7 +7,7 @@ import {AnimatedCircularProgress} from 'react-native-circular-progress';
 export default function Schedule() {
   return (
     <View style={styles.container}>
-      <ScrollView>
+     
         <View style={styles.header}>
           <View>
             <AntDesign color="white" size={30} name={'arrowleft'} />
@@ -18,7 +18,7 @@ export default function Schedule() {
           </View>
         </View>
         <View style={{height: 20}} />
-
+        <ScrollView>
         <View
           style={{
             borderWidth: 0,

@@ -14,6 +14,9 @@ import LoginWithPhone from './Login/LoginWithPhone';
 import ForgetPassword from './Login/ForgetPassword';
 import FurbabyDashboard from './Dashboard/FurbabyDashobard';
 import Schedule from './Schedule/Schedule';
+import InProgress from './InProgress/InProgress';
+import AddEditTracker from './InProgress/AddEditTracker';
+import NotesInProgress from './InProgress/NotesInProgress';
 
 storiesOf('Welcome', module).add('to Storybook', () => (
   <Welcome showApp={linkTo('Button')} />
@@ -39,4 +42,9 @@ storiesOf('Login', module)
 storiesOf('Dashboard', module).add('FurbabyDashboard', () => (
   <FurbabyDashboard />
 ));
-storiesOf("Schedule",module).add("schedule",()=> <Schedule />);
+storiesOf('Schedule', module).add('schedule', () => <Schedule />);
+storiesOf('InProgress', module)
+  // .add('InProgress', () => <InProgress />)
+  .add('InProgress', () => <InProgress /> )
+  .add('AddEditTracker', () => <AddEditTracker />)
+  .add('NotesInProgress', () => <NotesInProgress />);
