@@ -17,6 +17,11 @@ import Schedule from './Schedule/Schedule';
 import InProgress from './InProgress/InProgress';
 import AddEditTracker from './InProgress/AddEditTracker';
 import NotesInProgress from './InProgress/NotesInProgress';
+import PeeAndPoop from './InProgress/PeeAndPop';
+import Snapshots from './InProgress/Snapshots';
+import StaffOnlyNotes from './InProgress/StaffOnlyNotes';
+import CreateNewFurbaby from './Schedule/CreateNewFurbaby';
+import Database from './Database/Database';
 
 storiesOf('Welcome', module).add('to Storybook', () => (
   <Welcome showApp={linkTo('Button')} />
@@ -42,9 +47,15 @@ storiesOf('Login', module)
 storiesOf('Dashboard', module).add('FurbabyDashboard', () => (
   <FurbabyDashboard />
 ));
-storiesOf('Schedule', module).add('schedule', () => <Schedule />);
+storiesOf('Schedule', module)
+  .add('schedule', () => <Schedule />)
+  .add('CreateNewFurbaby', () => <CreateNewFurbaby />);
 storiesOf('InProgress', module)
   // .add('InProgress', () => <InProgress />)
-  .add('InProgress', () => <InProgress /> )
+  .add('InProgress', () => <InProgress />)
   .add('AddEditTracker', () => <AddEditTracker />)
-  .add('NotesInProgress', () => <NotesInProgress />);
+  .add('NotesInProgress', () => <NotesInProgress />)
+  .add('PeeAndPoop', () => <PeeAndPoop />)
+  .add('Snapshots', () => <Snapshots />)
+  .add('StaffOnlyNotes', () => <StaffOnlyNotes />);
+storiesOf('Database', module).add('Database', () => <Database />);
